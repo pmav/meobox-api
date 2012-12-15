@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package eu.pmav.meoboxapi;
 
 import eu.pmav.meoboxapi.exceptions.MeoBoxException;
@@ -11,19 +7,13 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author pmav
- */
 public class MeoBoxConsole
 {
-
     public static void main(String[] args) throws IOException
     {
         try
         {
             MeoBox meoBox = new MeoBox();
-
             meoBox.connect();
             
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,14 +25,10 @@ public class MeoBoxConsole
 
                 meoBox.sendKey(Integer.parseInt(keyCode));
             }
-
-
-
-
-        } catch (MeoBoxException ex)
+        }
+        catch (MeoBoxException ex)
         {
             Logger.getLogger(MeoBoxConsole.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }
